@@ -3340,3 +3340,276 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 40ms (Views: 38.0ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/users" for ::1 at 2019-04-10 14:01:04 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/joaquin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:18
+  Rendered users/index.html.erb within layouts/application (21.6ms)
+Completed 200 OK in 280ms (Views: 266.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users/new" for ::1 at 2019-04-10 14:01:06 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (10.2ms)
+  Rendered users/new.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 46ms (Views: 44.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-04-10 14:01:17 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"N4f9mxHKNl9PXPusLNHZw8KdFCt0xuo5kYq7fXR1lEfPiPpCEirJTxfLNk3P588poD1KQhQx5DPjUwIsuJNUIQ==", "user"=>{"name"=>"macarena", "lastname"=>"espinosa", "email"=>"lahmakytha@kuma.cl", "password"=>"[FILTERED]", "address"=>"Pomaire"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "lastname", "email", "password", "address", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "macarena"], ["lastname", "espinosa"], ["email", "lahmakytha@kuma.cl"], ["password", "makithakill"], ["address", "Pomaire"], ["created_at", "2019-04-10 18:01:17.165347"], ["updated_at", "2019-04-10 18:01:17.165347"]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:4
+Redirected to http://localhost:3000/users/13
+Completed 302 Found in 10ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/users/13" for ::1 at 2019-04-10 14:01:17 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 38ms (Views: 34.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for ::1 at 2019-04-10 14:01:19 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:18
+  Rendered users/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 37ms (Views: 35.5ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/13" for ::1 at 2019-04-10 14:01:22 -0400
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"0zCkVMkoR0s3GYYblbCk5tJyjY2N6fKPgWK1CeFn3VURzsOmaEdMjuMS35NH9psUr9upDz+vB44tjtSo4VzUsA==", "id"=>"13"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:30
+  [1m[36mUser Destroy (1.0ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 13]]
+  ↳ app/controllers/users_controller.rb:30
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:30
+Redirected to http://localhost:3000/users
+Completed 302 Found in 11ms (ActiveRecord: 6.7ms)
+
+
+Started GET "/users" for ::1 at 2019-04-10 14:01:22 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:18
+  Rendered users/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 56ms (Views: 53.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/tickets" for ::1 at 2019-04-10 14:09:34 -0400
+Processing by TicketsController#index as HTML
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.html.erb:15
+  [1m[36mTicketType Load (0.2ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mTicketType Load (0.2ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mTicketType Load (0.1ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mTicketType Load (0.2ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mTicketType Load (0.1ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mCACHE TicketType Load (0.0ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mCACHE TicketType Load (0.0ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mCACHE TicketType Load (0.0ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mTicketType Load (0.1ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mTicketType Load (0.1ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mCACHE TicketType Load (0.0ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mCACHE TicketType Load (0.0ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mCACHE TicketType Load (0.0ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mTicketType Load (0.1ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mTicketType Load (0.1ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  Rendered tickets/index.html.erb within layouts/application (66.1ms)
+Completed 200 OK in 105ms (Views: 94.3ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/tickets" for ::1 at 2019-04-10 14:12:27 -0400
+Processing by TicketsController#index as HTML
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[36mTicket Load (0.6ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.html.erb:15
+  [1m[36mTicketType Load (0.1ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mTicketType Load (0.1ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mTicketType Load (0.1ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mTicketType Load (0.1ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mTicketType Load (0.1ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mCACHE TicketType Load (0.0ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mCACHE TicketType Load (0.0ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mCACHE TicketType Load (0.0ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mTicketType Load (0.1ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mTicketType Load (0.2ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mCACHE TicketType Load (0.0ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mCACHE TicketType Load (0.0ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mCACHE TicketType Load (0.0ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mTicketType Load (0.1ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mTicketType Load (0.1ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  Rendered tickets/index.html.erb within layouts/application (98.5ms)
+Completed 200 OK in 137ms (Views: 127.8ms | ActiveRecord: 6.2ms)
+
+
