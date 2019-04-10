@@ -3613,3 +3613,61 @@ Processing by TicketsController#index as HTML
 Completed 200 OK in 137ms (Views: 127.8ms | ActiveRecord: 6.2ms)
 
 
+Started GET "/event_venues" for ::1 at 2019-04-10 14:21:55 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/joaquin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by EventVenuesController#index as HTML
+  Rendering event_venues/index.html.erb within layouts/application
+  [1m[36mEventVenue Load (0.2ms)[0m  [1m[34mSELECT "event_venues".* FROM "event_venues"[0m
+  ↳ app/views/event_venues/index.html.erb:16
+  Rendered event_venues/index.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 287ms (Views: 274.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/event_venues/new" for ::1 at 2019-04-10 14:22:03 -0400
+Processing by EventVenuesController#new as HTML
+  Rendering event_venues/new.html.erb within layouts/application
+  Rendered event_venues/_form.html.erb (6.2ms)
+  Rendered event_venues/new.html.erb within layouts/application (7.9ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `string' for :name:Symbol):
+    12:   <% end %>
+    13: 
+    14:   <div class="field">
+    15:     <%= form.label :name.string %>
+    16:     <%= form.text_field :name.string %>
+    17:   </div>
+    18: 
+  
+app/views/event_venues/_form.html.erb:15:in `block in _app_views_event_venues__form_html_erb___796552312602758570_70001323205140'
+app/views/event_venues/_form.html.erb:1:in `_app_views_event_venues__form_html_erb___796552312602758570_70001323205140'
+app/views/event_venues/new.html.erb:3:in `_app_views_event_venues_new_html_erb__387192218710213616_70001323183360'
+Started GET "/event_venues" for ::1 at 2019-04-10 14:24:08 -0400
+Processing by EventVenuesController#index as HTML
+  Rendering event_venues/index.html.erb within layouts/application
+  [1m[36mEventVenue Load (0.1ms)[0m  [1m[34mSELECT "event_venues".* FROM "event_venues"[0m
+  ↳ app/views/event_venues/index.html.erb:16
+  Rendered event_venues/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 44ms (Views: 41.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/event_venues" for ::1 at 2019-04-10 14:24:10 -0400
+Processing by EventVenuesController#index as HTML
+  Rendering event_venues/index.html.erb within layouts/application
+  [1m[36mEventVenue Load (0.1ms)[0m  [1m[34mSELECT "event_venues".* FROM "event_venues"[0m
+  ↳ app/views/event_venues/index.html.erb:16
+  Rendered event_venues/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 50ms (Views: 48.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/event_venues/new" for ::1 at 2019-04-10 14:24:12 -0400
+Processing by EventVenuesController#new as HTML
+  Rendering event_venues/new.html.erb within layouts/application
+  Rendered event_venues/_form.html.erb (17.1ms)
+  Rendered event_venues/new.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 50ms (Views: 48.1ms | ActiveRecord: 0.0ms)
+
+
