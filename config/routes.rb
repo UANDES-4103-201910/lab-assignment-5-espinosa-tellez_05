@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :events
+  resources :users
+  resources :tickets
+  resources :event_venues
+  resources :event
   get 'users/create', to: 'users#create'
   get 'users/update', to: 'users#update'
   get 'users/destroy', to: 'users#destroy'
