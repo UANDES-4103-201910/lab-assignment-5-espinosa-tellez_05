@@ -15,7 +15,7 @@
   <tbody>
     <% @event_venues.each do |event_venue| %>
       <tr>
-        <td><%= event_venue.name.string %></td>
+        <td><%= event_venue.name %></td>
         <td><%= event_venue.address %></td>
         <td><%= event_venue.capacity %></td>
         <td><%= link_to 'Show', event_venue %></td>
