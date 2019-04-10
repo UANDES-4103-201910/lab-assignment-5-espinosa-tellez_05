@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   def create
-    @users = User.new(params[:users])
-    if @users.save
-      redirect_to @users
+    @user = User.new(user_params)
+    if @user.save
+      redirect_to @user
     else
       # This line overrides the default rendering behavior, which
       # would have been to render the "create" view.
@@ -10,12 +10,25 @@ class UsersController < ApplicationController
     end
   end
 
+  def new
+  	@user = User.new   
+  end
+
+  def edit
+  	@user = User.find(params[:id])
+  end
+
 
   def update
-    
+  	@user = User.find(params[:id])
+    @user.update!(user_params)
+    redirect_to @user
   end
 
   def destroy
+  	@user = User.find(params[:id])
+    @user.destroy
+    redirect_to users_path
   end
 
   def show
@@ -35,5 +48,9 @@ class UsersController < ApplicationController
       format.xml  { render xml: @users }
       format.json { render json: @users }
     end
+  end
+
+  def user_params
+  	params.require(:user).permit(:name, :lastname, :email, :password, :address)
   end
 end
