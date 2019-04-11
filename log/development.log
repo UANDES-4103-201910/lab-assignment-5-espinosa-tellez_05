@@ -4304,6 +4304,7 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/users/user_with_most_tickets" for ::1 at 2019-04-11 15:43:22 -0400
   [1m[35m (16.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /home/megh/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
@@ -4812,6 +4813,111 @@ Completed 406 Not Acceptable in 50ms (ActiveRecord: 1.3ms)
 
   
 ActionController::UnknownFormat (UsersController#user_with_most_tickets is missing a template for this request format and variant.
+=======
+Started GET "/" for ::1 at 2019-04-10 23:26:08 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/joaquin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/joaquin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/joaquin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.1ms)
+Completed 200 OK in 17ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for ::1 at 2019-04-10 23:26:15 -0400
+  
+SyntaxError (/home/joaquin/Desktop/Web_Labs/lab-assignment-5-espinosa-tellez_05/app/controllers/events_controller.rb:53: syntax error, unexpected '<'
+...nts = Event.where(start_date: < (Datetime.now + (60*60*24*30...
+...                              ^
+/home/joaquin/Desktop/Web_Labs/lab-assignment-5-espinosa-tellez_05/app/controllers/events_controller.rb:53: syntax error, unexpected ')', expecting keyword_end
+...atetime.now + (60*60*24*30*3))).where(start_date: > Datetime...
+...                              ^
+/home/joaquin/Desktop/Web_Labs/lab-assignment-5-espinosa-tellez_05/app/controllers/events_controller.rb:53: syntax error, unexpected '>'
+...*24*30*3))).where(start_date: > Datetime.now)
+...                              ^
+/home/joaquin/Desktop/Web_Labs/lab-assignment-5-espinosa-tellez_05/app/controllers/events_controller.rb:53: syntax error, unexpected ')', expecting keyword_end
+...ere(start_date: > Datetime.now)
+...                              ^
+/home/joaquin/Desktop/Web_Labs/lab-assignment-5-espinosa-tellez_05/app/controllers/events_controller.rb:59: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/events_controller.rb:53: syntax error, unexpected '<'
+app/controllers/events_controller.rb:53: syntax error, unexpected ')', expecting keyword_end
+app/controllers/events_controller.rb:53: syntax error, unexpected '>'
+app/controllers/events_controller.rb:53: syntax error, unexpected ')', expecting keyword_end
+app/controllers/events_controller.rb:59: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/events" for ::1 at 2019-04-10 23:27:10 -0400
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  [1m[36mEventVenue Load (0.1ms)[0m  [1m[34mSELECT  "event_venues".* FROM "event_venues" WHERE "event_venues"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:22
+  [1m[36mEventVenue Load (0.2ms)[0m  [1m[34mSELECT  "event_venues".* FROM "event_venues" WHERE "event_venues"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:22
+  [1m[36mEventVenue Load (0.1ms)[0m  [1m[34mSELECT  "event_venues".* FROM "event_venues" WHERE "event_venues"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:22
+  Rendered events/index.html.erb within layouts/application (44.6ms)
+Completed 200 OK in 382ms (Views: 371.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/events/upcoming_events" for ::1 at 2019-04-10 23:27:25 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"upcoming_events"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:43
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Event with 'id'=upcoming_events):
+  
+app/controllers/events_controller.rb:43:in `show'
+Started GET "/upcoming_events" for ::1 at 2019-04-10 23:30:32 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/joaquin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by EventsController#upcoming_events as HTML
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant EventsController::Datetime):
+  
+app/controllers/events_controller.rb:53:in `upcoming_events'
+Started GET "/upcoming_events" for ::1 at 2019-04-10 23:31:35 -0400
+Processing by EventsController#upcoming_events as HTML
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant EventsController::Datetime):
+  
+app/controllers/events_controller.rb:53:in `upcoming_events'
+Started GET "/upcoming_events" for ::1 at 2019-04-10 23:33:09 -0400
+Processing by EventsController#upcoming_events as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (comparison of Symbol with 1562644800 failed):
+  
+app/controllers/events_controller.rb:53:in `<'
+app/controllers/events_controller.rb:53:in `upcoming_events'
+Started GET "/upcoming_events" for ::1 at 2019-04-10 23:33:55 -0400
+Processing by EventsController#upcoming_events as HTML
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `to_time' for :start_date:Symbol):
+  
+app/controllers/events_controller.rb:53:in `upcoming_events'
+Started GET "/upcoming_events" for ::1 at 2019-04-10 23:41:34 -0400
+Processing by EventsController#upcoming_events as HTML
+Completed 406 Not Acceptable in 85ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionController::UnknownFormat (EventsController#upcoming_events is missing a template for this request format and variant.
+>>>>>>> 331e23a3819d4c7c33f538ebad2ffe52e4d5fc77
 
 request.formats: ["text/html"]
 request.variant: []
@@ -4885,6 +4991,7 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/users/user_with_most_tickets" for ::1 at 2019-04-11 15:49:57 -0400
 Processing by UsersController#user_with_most_tickets as HTML
 Completed 406 Not Acceptable in 45ms (ActiveRecord: 0.0ms)
@@ -4892,6 +4999,15 @@ Completed 406 Not Acceptable in 45ms (ActiveRecord: 0.0ms)
 
   
 ActionController::UnknownFormat (UsersController#user_with_most_tickets is missing a template for this request format and variant.
+=======
+Started GET "/upcoming_events" for ::1 at 2019-04-10 23:42:16 -0400
+Processing by EventsController#upcoming_events as HTML
+Completed 406 Not Acceptable in 55ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionController::UnknownFormat (EventsController#upcoming_events is missing a template for this request format and variant.
+>>>>>>> 331e23a3819d4c7c33f538ebad2ffe52e4d5fc77
 
 request.formats: ["text/html"]
 request.variant: []
@@ -4965,6 +5081,7 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/users" for ::1 at 2019-04-11 16:14:13 -0400
 Processing by UsersController#index as HTML
   Rendering users/index.html.erb within layouts/application
@@ -5031,3 +5148,31 @@ ActiveRecord::StatementInvalid (SQLite3::SQLException: near "Order": syntax erro
     order by amount desc limit 1):
   
 app/controllers/users_controller.rb:59:in `user_with_most_tickets'
+=======
+Started GET "/upcoming_events" for ::1 at 2019-04-10 23:46:50 -0400
+Processing by EventsController#upcoming_events as HTML
+  Rendering events/upcoming_events.html.erb within layouts/application
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."start_date" >= ? AND "events"."start_date" < ?[0m  [["start_date", "2019-04-10"], ["start_date", "2019-06-10"]]
+  ↳ app/views/events/upcoming_events.html.erb:17
+  [1m[36mEventVenue Load (0.3ms)[0m  [1m[34mSELECT  "event_venues".* FROM "event_venues" WHERE "event_venues"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/events/upcoming_events.html.erb:22
+  Rendered events/upcoming_events.html.erb within layouts/application (61.6ms)
+Completed 200 OK in 350ms (Views: 342.8ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/events" for ::1 at 2019-04-10 23:47:01 -0400
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  [1m[36mEventVenue Load (0.2ms)[0m  [1m[34mSELECT  "event_venues".* FROM "event_venues" WHERE "event_venues"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:22
+  [1m[36mEventVenue Load (0.1ms)[0m  [1m[34mSELECT  "event_venues".* FROM "event_venues" WHERE "event_venues"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:22
+  [1m[36mEventVenue Load (0.1ms)[0m  [1m[34mSELECT  "event_venues".* FROM "event_venues" WHERE "event_venues"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:22
+  Rendered events/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 36ms (Views: 33.7ms | ActiveRecord: 0.6ms)
+
+
+>>>>>>> 331e23a3819d4c7c33f538ebad2ffe52e4d5fc77
