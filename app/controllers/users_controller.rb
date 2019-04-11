@@ -50,15 +50,8 @@ class UsersController < ApplicationController
   end
 
   def user_with_most_tickets
-    sql = "select User.id, User.name, User.lastname, count(Ticket.id) amount from User
-    inner join Order on User.id = Order.user
-    inner join Ticket on Order.id = Ticket.order
-    group by User.id, User.name, User.lastname
-    order by amount desc limit 1"
-
-    result = ActiveRecord::Base.connection.execute(sql)
-    @User.find(result[0]) unless result.nil?
-  
+    
+    @user = User.find(Order.group(:user_id).order('COUNT(user_id) DESC').first.user_id)
 
     respond_to do |format|
       format.html # index.html.erb
