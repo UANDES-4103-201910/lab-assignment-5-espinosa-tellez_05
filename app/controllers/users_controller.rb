@@ -49,6 +49,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def user_with_most_tickets
+
+  end
+
   def user_params
   	params.require(:user).permit(:name, :lastname, :email, :password, :address)
   end

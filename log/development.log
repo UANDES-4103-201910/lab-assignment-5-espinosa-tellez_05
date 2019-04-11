@@ -3906,3 +3906,401 @@ Completed 200 OK in 50ms (Views: 48.1ms | ActiveRecord: 0.0ms)
 >>>>>>> 0f0121197a961f171d56cbf8193981fad4ad776f
 
 
+Started GET "/ticket_types" for ::1 at 2019-04-11 14:11:38 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/megh/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for TicketTypesController):
+  
+actionpack (5.2.3) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/ticket_types/1/tickets" for ::1 at 2019-04-11 14:11:46 -0400
+Processing by TicketsController#index as HTML
+  Parameters: {"ticket_type_id"=>"1"}
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[36mTicket Load (12.3ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.html.erb:15
+  [1m[36mTicketType Load (14.0ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mTicketType Load (0.2ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mTicketType Load (0.1ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mTicketType Load (0.1ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mTicketType Load (0.6ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mCACHE TicketType Load (0.0ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mCACHE TicketType Load (0.0ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mCACHE TicketType Load (0.0ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mTicketType Load (0.1ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mTicketType Load (0.1ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mCACHE TicketType Load (0.0ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mCACHE TicketType Load (0.0ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mCACHE TicketType Load (0.0ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mTicketType Load (0.1ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mTicketType Load (0.1ms)[0m  [1m[34mSELECT  "ticket_types".* FROM "ticket_types" WHERE "ticket_types"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:17
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:18
+  Rendered tickets/index.html.erb within layouts/application (318.5ms)
+Completed 200 OK in 1185ms (Views: 774.0ms | ActiveRecord: 38.2ms)
+
+
+Started GET "/tusers" for ::1 at 2019-04-11 14:15:30 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/tusers"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users" for ::1 at 2019-04-11 14:15:35 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:18
+  Rendered users/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 119ms (Views: 56.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/user_with_most_tickets" for ::1 at 2019-04-11 14:22:20 -0400
+  
+NameError (undefined local variable or method `user_with_most_tickets' for #<ActionDispatch::Routing::Mapper:0x00007f3e3005dfc8>):
+  
+config/routes.rb:4:in `block (2 levels) in <main>'
+config/routes.rb:3:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/users/user_with_most_tickets" for ::1 at 2019-04-11 14:23:58 -0400
+  
+SyntaxError (/home/megh/Desktop/lab-assignment-5-espinosa-tellez_05/config/routes.rb:15: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+config/routes.rb:15: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/users/user_with_most_tickets" for ::1 at 2019-04-11 14:24:24 -0400
+Processing by UsersController#user_with_most_tickets as HTML
+Completed 406 Not Acceptable in 40ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (UsersController#user_with_most_tickets is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.3) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/user_with_most_tickets" for ::1 at 2019-04-11 14:24:27 -0400
+Processing by UsersController#user_with_most_tickets as HTML
+Completed 406 Not Acceptable in 35ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (UsersController#user_with_most_tickets is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.3) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
